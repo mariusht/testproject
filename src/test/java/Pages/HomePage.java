@@ -13,9 +13,7 @@ public class HomePage {
     private WebDriver driver;
     
 
-    public HomePage (WebDriver aDriver) {
-        driver = aDriver;
-    }
+    public HomePage (WebDriver aDriver) {driver = aDriver;}
 
     public void openHomePage(){
         driver.manage().window().maximize();
