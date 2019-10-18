@@ -1,24 +1,13 @@
 package Tests;
 
-import Pages.AllTopsMenPage;
+import Pages.TshirtsMenPage;
 import Pages.HomePage;
-import org.hamcrest.core.Is;
-import org.junit.Assert;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.sql.Driver;
-import java.util.Set;
 
 
 public class selectMensProduct {
@@ -35,11 +24,11 @@ public class selectMensProduct {
     public void selectMensProduct(){
         HomePage homePage = new HomePage(driver);
         homePage.openMensPage();
-        AllTopsMenPage allTopsMenPage = new AllTopsMenPage(driver);
-        allTopsMenPage.openAllTopsMenPage();
-        allTopsMenPage.selectFirstProductOnPage();
-
-
-
+        TshirtsMenPage tshirtsMenPage = new TshirtsMenPage(driver);
+        tshirtsMenPage.openAllTopsMenPage();
+        tshirtsMenPage.selectAProductOnPage();
     }
+
+    //@AfterClass()
+   // public static void closeBrowser(){ driver.quit(); }
 }
