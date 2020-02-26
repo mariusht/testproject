@@ -43,11 +43,6 @@ public class TshirtsMenPage {
         Assert.assertThat(driver.getTitle(), Is.is("T-SHIRTS - TOPS - MEN | UNIQLO"));
     }
 
-
-
-    //KODEN ER RIKTIG MEN TRENGER WAIT FØR SIZE VALG OG TELLING AV HANDLEVOGN!!!
-
-
     public void selectAProductOnPage(){
         //Selects any short sleeve product on page
         WebElement productOnPage = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Short Sleeve")));
