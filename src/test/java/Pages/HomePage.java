@@ -37,4 +37,8 @@ public class HomePage {
     }
 
 
+    public void removeItemFromShoppingCart() {
+        WebElement removeItemFromShoppingCartButton = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("remove-item")));
+        removeItemFromShoppingCartButton.click();
+    }
 }

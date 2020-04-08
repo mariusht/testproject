@@ -57,12 +57,11 @@ public class TshirtsMenPage {
         int numberOfSizes = sizes.size();
         System.out.print(numberOfSizes);
         Random rand = new Random();
-        int randomSize = rand.nextInt(numberOfSizes);
-        if (randomSize == 0) {
+        int randomValue = rand.nextInt(numberOfSizes);
+       /* if (randomSize == 0) {
             randomSize = randomSize + 1;
-        }
-        //String dynamicButtonCSS = "#tertiary li[class*='"+randomSize+"']>a";
-        WebElement sizeButton = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("#tertiary li[class*='"+randomSize+"']>a")));
+        }*/
+        WebElement sizeButton = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("#tertiary li[class*='"+randomValue+"']>a")));
         JavascriptExecutor ex3 = (JavascriptExecutor) driver;
         ex3.executeScript("arguments[0].click();", sizeButton);
         WebElement cartButton = driver.findElement(By.cssSelector("[type=\"button\"][title=\"ADD TO BAG\"]"));
