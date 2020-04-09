@@ -31,7 +31,7 @@ public class selectMensProduct {
         tshirtsMenPage.selectAProductOnPage();
     }
 
-    @AfterClass()
+   /* @AfterClass()
     public static void closeBrowser(){
-    driver.quit(); }
+    driver.quit(); }*/
 }

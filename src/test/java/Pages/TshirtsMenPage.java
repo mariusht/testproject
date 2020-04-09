@@ -58,10 +58,7 @@ public class TshirtsMenPage {
         System.out.print(numberOfSizes);
         Random rand = new Random();
         int randomValue = rand.nextInt(numberOfSizes);
-       /* if (randomSize == 0) {
-            randomSize = randomSize + 1;
-        }*/
-        WebElement sizeButton = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("#tertiary li[class*='"+randomValue+"']>a")));
+        WebElement sizeButton = sizes.get(randomValue);
         JavascriptExecutor ex3 = (JavascriptExecutor) driver;
         ex3.executeScript("arguments[0].click();", sizeButton);
         WebElement cartButton = driver.findElement(By.cssSelector("[type=\"button\"][title=\"ADD TO BAG\"]"));
@@ -70,6 +67,6 @@ public class TshirtsMenPage {
         String newCartCount = new WebDriverWait(driver, 20).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".icon.bag_qty"))).getText();
         System.out.print(newCartCount);
         Assert.assertNotEquals(newCartCount, initialCartCount);
-
     }
 }
+
