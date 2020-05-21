@@ -51,6 +51,7 @@ public class TshirtsMenPage {
 
         //Select a random available size on default color and add to cart
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        //WebElement availableSizes = new WebDriverWait(driver, 20).until(ExpectedConditions.presenceOfElementLocated(By.id("selectSizeDetail")));
         String initialCartCount = driver.findElement(By.cssSelector(".icon.bag_qty")).getText();
         System.out.print(initialCartCount);
         List<WebElement> sizes = driver.findElements(By.cssSelector("#tertiary li[size][class]:not([class*='disable'])"));

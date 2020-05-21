@@ -41,4 +41,9 @@ public class HomePage {
         WebElement removeItemFromShoppingCartButton = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("remove-item")));
         removeItemFromShoppingCartButton.click();
     }
+
+    public void clickContactUs(){
+        WebElement contactUsButton = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.linkText("Contact us")));
+        contactUsButton.click();
+    }
 }
