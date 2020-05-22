@@ -12,7 +12,14 @@ public class ContactUs {
     public ContactUs (WebDriver aDriver) {driver = aDriver;}
 
     public void fillInForm(){
-        WebElement firstNameField = new WebDriverWait(driver,20).until(ExpectedConditions.presenceOfElementLocated(By.className("form-set-parts-input mgr20 js-input-wrapper")));
+        WebElement firstNameField = new WebDriverWait(driver,20).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='j_id0:j_id274:j_id280']")));
+        WebElement lastNameField = new WebDriverWait(driver,20).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='j_id0:j_id274:j_id282']")));
+        WebElement eMailField = new WebDriverWait(driver,20).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='']")));
+        WebElement phoneField = new WebDriverWait(driver,20).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='']")));
+        WebElement inquiryContentsField = new WebDriverWait(driver,20).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='']")));
+
+
+
 
         firstNameField.sendKeys("John");
     }
