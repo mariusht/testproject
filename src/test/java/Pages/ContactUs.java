@@ -1,6 +1,7 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,25 +27,24 @@ public class ContactUs {
         WebElement inquiryCategory1Dropdown = new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.cssSelector("select[name='j_id0:j_id274:j_id292']")));
         WebElement inquiryCategory2Dropdown = new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.cssSelector("select[name='j_id0:j_id274:subcategory2uq']")));
 
+        // Lag kode for å velge tilfeldig valg fra dropdown, og hente navn og tekst fra en fil.
+
         firstNameField.sendKeys("John");
         lastNameField.sendKeys("Test");
         eMailField.sendKeys("johntest@johntest.com");
         phoneField.sendKeys("0123456789");
-/*
 
-        List<WebElement> inquiryTitleOptions = driver.findElements(By.cssSelector(".is-error option[value]"));
-        Random rand = new Random();
-        int selectedInquiryTitleOption = rand.nextInt(inquiryTitleOptions.size());
-        inquiryTitleDropdown = inquiryTitleOptions.get(selectedInquiryTitleOption);
-        inquiryTitleDropdown.click();
-*/
         Select selectTitle = new Select(inquiryTitleDropdown);
         selectTitle.selectByVisibleText("Compliment");
         Select selectCategory1 = new Select(inquiryCategory1Dropdown);
         selectCategory1.selectByVisibleText("Product");
-        inquiryCategory2Dropdown = new WebDriverWait(driver, 40).until(ExpectedConditions.presenceOfElementLocated(By.linkText("Quality")));
-        Select selectCategory2 = new Select(inquiryCategory2Dropdown);
-        selectCategory2.selectByVisibleText("Quality");
+        //inquiryCategory2Dropdown = new WebDriverWait(driver, 40).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[value='Operation']")));
+        //Select selectCategory2 = new Select(inquiryCategory2Dropdown);
+        //selectCategory2.selectByVisibleText("Quality");
+        inquiryCategory2Dropdown.click();
+        inquiryCategory2Dropdown.sendKeys(Keys.ARROW_DOWN);
+        inquiryCategory2Dropdown.sendKeys(Keys.ARROW_DOWN);
+        inquiryCategory2Dropdown.sendKeys(Keys.ENTER);
         inquiryContentsField.sendKeys("Inquiry content goes here");
 
     }
