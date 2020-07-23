@@ -28,6 +28,7 @@ public class ContactUs {
         WebElement inquiryCategory2Dropdown = new WebDriverWait(driver, 40).until(ExpectedConditions.elementToBeClickable(By.cssSelector("select[name='j_id0:j_id274:subcategory2uq']")));
 
         // Lag kode for å velge tilfeldig valg fra dropdown, og hente navn og tekst fra en fil.
+        //NESTE GANG LAG KODE FOR LESE FRA FIL
 
         firstNameField.sendKeys("John");
         lastNameField.sendKeys("Test");
