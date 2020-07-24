@@ -1,5 +1,6 @@
 package Pages;
 
+import Initializing.setup;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -8,9 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
+import java.io.IOException;
 
 public class ContactUs {
     private WebDriver driver;
@@ -29,6 +28,13 @@ public class ContactUs {
 
         // Lag kode for å velge tilfeldig valg fra dropdown, og hente navn og tekst fra en fil.
         //NESTE GANG LAG KODE FOR LESE FRA FIL
+
+        try {
+            setup.readFromFile(0);
+        }
+        catch(IOException e){
+            System.out.println("Failure");
+        }
 
         firstNameField.sendKeys("John");
         lastNameField.sendKeys("Test");
