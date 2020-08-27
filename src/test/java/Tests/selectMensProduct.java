@@ -1,15 +1,12 @@
 package Tests;
 
-import Pages.TshirtsMenPage;
 import Pages.HomePage;
-import org.junit.AfterClass;
+import Pages.TshirtsMenPage;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
-import java.util.concurrent.TimeUnit;
 
 
 public class selectMensProduct {
@@ -28,7 +25,7 @@ public class selectMensProduct {
         homePage.openMensPage();
         TshirtsMenPage tshirtsMenPage = new TshirtsMenPage(driver);
         tshirtsMenPage.openAllTopsMenPage();
-        tshirtsMenPage.selectAProductOnPage();
+        tshirtsMenPage.selectATshirtOnPage();
     }
 
    /* @AfterClass()

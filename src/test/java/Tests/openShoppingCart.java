@@ -1,7 +1,7 @@
 package Tests;
 
-import Initializing.setup;
 import Pages.HomePage;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -18,5 +18,10 @@ public class openShoppingCart {
         HomePage homePage = new HomePage(driver);
         homePage.openHomePage();
         homePage.clickShoppingCart();
+    }
+
+    @AfterClass
+    public static void closeBrowser(){
+        driver.close();
     }
 }

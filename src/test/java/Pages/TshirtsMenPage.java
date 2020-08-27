@@ -2,12 +2,11 @@ package Pages;
 
 import org.hamcrest.core.Is;
 import org.junit.Assert;
-import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.KeyInput;
-import org.openqa.selenium.support.pagefactory.ByChained;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Sleeper;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -43,7 +42,7 @@ public class TshirtsMenPage {
         Assert.assertThat(driver.getTitle(), Is.is("T-SHIRTS - TOPS - MEN | UNIQLO"));
     }
 
-    public void selectAProductOnPage(){
+    public void selectATshirtOnPage(){
         //Selects any short sleeve product on page
         WebElement productOnPage = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Short Sleeve")));
         JavascriptExecutor ex = (JavascriptExecutor) driver;
