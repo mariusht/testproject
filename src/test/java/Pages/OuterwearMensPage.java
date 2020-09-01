@@ -3,6 +3,7 @@ package Pages;
 import org.hamcrest.core.Is;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -47,11 +48,22 @@ public class OuterwearMensPage {
         System.out.println(numberOfProducts);
         Random rand = new Random();
         int randomProduct = rand.nextInt(numberOfProducts);
+        WebElement product = products.get(randomProduct);
+        JavascriptExecutor ex1 = (JavascriptExecutor) driver;
+        ex1.executeScript("arguments[0].click();", product);
 
-        //Select random available size and available color
+        //Select random available color and available size
         List<WebElement> colors = driver.findElements(By.cssSelector(".selectAttr [color]"));
         int numberOfColors = colors.size();
         System.out.println(numberOfColors);
+        Random rand2 = new Random();
+        int randomColor = rand2.nextInt(numberOfColors);
+        WebElement colorButton = colors.get(randomColor);
+        JavascriptExecutor ex2 = (JavascriptExecutor) driver;
+        ex2.executeScript("arguments[0].click();", colors);
+
+        List<WebElement> sizes = driver.findElements()
+
 
 
         }
