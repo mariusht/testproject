@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,9 +17,11 @@ public class OuterwearMensPage {
 
     private WebDriver driver;
 
-    public OuterwearMensPage(WebDriver aDriver){driver = aDriver;}
+    public OuterwearMensPage(WebDriver aDriver) {
+        driver = aDriver;
+    }
 
-    public void openOuterwearPage(){
+    public void openOuterwearPage() {
         //Save old tab handle
         String oldTab = driver.getWindowHandle();
 
@@ -31,18 +32,20 @@ public class OuterwearMensPage {
         //Switch to new tab IF opened in new tab
         Set<String> myTabs = driver.getWindowHandles();
         String newTab = "";
-        for (String aHandle : myTabs){
-            if(!oldTab.contentEquals(aHandle)){
+        for (String aHandle : myTabs) {
+            if (!oldTab.contentEquals(aHandle)) {
                 newTab = aHandle;
                 break;
             }
             driver.switchTo().window(newTab);
             Assert.assertThat(driver.getTitle(), Is.is("VIEW ALL OUTERWEAR - OUTERWEAR - MEN  | UNIQLO"));
+        }
     }
-    public void selectOuterwearProduct(){
-         WebElement outerwear = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("")));
 
-         //Select product
+    public void selectOuterwearProduct() {
+        WebElement outerwear = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("")));
+
+        //Select product
         List<WebElement> products = driver.findElements(By.xpath("//li[contains(@class,'item') and not (contains(@class, 'menu'))] "));
         int numberOfProducts = products.size();
         System.out.println(numberOfProducts);
@@ -62,11 +65,7 @@ public class OuterwearMensPage {
         JavascriptExecutor ex2 = (JavascriptExecutor) driver;
         ex2.executeScript("arguments[0].click();", colors);
 
-        List<WebElement> sizes = driver.findElements()
-
-
-
-        }
-
     }
 }
+
+

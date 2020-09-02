@@ -24,7 +24,7 @@ public class removeItemFromShoppingCart {
         homepage.openMensPage();
         TshirtsMenPage tshirtsMenPage = new TshirtsMenPage(driver);
         tshirtsMenPage.openAllTopsMenPage();
-        tshirtsMenPage.selectAProductOnPage();
+        tshirtsMenPage.selectATshirtOnPage();
         homepage.clickShoppingCart();
         homepage.removeItemFromShoppingCart();
 
